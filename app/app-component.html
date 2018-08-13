@@ -1,0 +1,29 @@
+<h1>90°</h1>
+<h2>Uma lista {{tarecos}}</h2>
+<ul>
+    <li *ngFor="#coisa of coisas; #i = index">
+        {{coisa}} <a href="#" (click)="remove(i)">[X]</a>
+    </li>
+</ul>
+    
+<input type="text" name="inputCoisa" placeholder="Digite qualquer coisa ..." [(ngModel)]="valorTxtCoisa">
+<button (click)="addCoisaLista()">Add</button>
+
+<h2>Another List do {{chosenOne.nome}}</h2>
+<ul>
+    <li *ngFor="#c of listClientes; #j = index">
+        {{c.id}} ; 
+        {{c.nome}} ; 
+        Saldo : {{c.saldo | currency:'BRL':true}}  ;
+        CPF : {{c.CPF | cpf}}
+
+        <a href="#" (click)="selecionaCliente(j)">[X]</a>
+    </li>
+</ul>
+
+<p>O cliente escolhido é: {{chosenOne.nome}}</p>
+<p *ngIf="chosenOne.id == 1">Vader says: I am your father</p>
+<p *ngIf="chosenOne.id == 6">Galvão says: Tafareeelllllllllll !!!!!</p>
+
+<input type="text" name="inputClinte" placeholder="Digite qualquer coisa ..." [(ngModel)]="valorTxtCliente">
+<button (click)="add()">Add</button>
